@@ -1,5 +1,6 @@
 # Chronicle Content Tracker
-Final Project for Makers. For information about our approach and process, check out our wiki. 
+Final Project for Makers. For information about our approach and process, check out our wiki.
+Visit the project [here](https://chronicle-content-tracker.herokuapp.com/)!
 
 ## User Stories
 MVP user stories
