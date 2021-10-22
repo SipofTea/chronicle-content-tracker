@@ -13,7 +13,7 @@ exports.index = function(req, res, next) {
   })
   }
   catch {
-    res.render('landing', {
+    res.render('index', {
       title: 'Chronicle'
     })
   }

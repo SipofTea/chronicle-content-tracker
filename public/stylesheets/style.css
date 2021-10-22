@@ -12,10 +12,6 @@ body {
   font-size: small;
 }
 
-.fullnav {
-  display: none;
-}
-
 .navbar .btn {
   margin: 5px;
   padding: 10px
@@ -23,14 +19,6 @@ body {
 
 .search_bar_text {
   color: #363A50;
-}
-
-.search_bar_button {
-  border: 1px solid #C79658;
-  border-radius: 8px;
-  background-color: #363A50;
-  color: #FFFFFF;
-  font-size: small;
 }
 
 .jumbotron {
@@ -116,7 +104,6 @@ body {
   body {
     padding-left: 10vw;
     padding-right: 10vw;
-    font-family: "American Typewriter";
   }
 
   .registration-wrapper {
@@ -126,23 +113,8 @@ body {
     border-radius: 8px;
     background-color: #272A3A;
   }
-  
-  .fullnav {
-    display: flex;
-  }
-
-  .dropnav {
-    display: none;
-  }
 
   .footer {
     display: flex;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .navbar .btn {
-    margin: 5px;
-    padding: 5px
   }
 }
