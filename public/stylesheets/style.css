@@ -23,6 +23,7 @@ body {
 
 .jumbotron {
   padding: 0px;
+  max-width: 100%
 }
 
 .footer {
@@ -107,7 +108,6 @@ body {
   }
 
   .jumbotron {
-    padding: 0px;
     margin-left: 10vh;
     margin-right: 10vh;
   }
