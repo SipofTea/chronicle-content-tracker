@@ -8,7 +8,7 @@ body {
   border: 1px solid #C79658;
   border-radius: 8px;
   background-color: #363A50;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   font-size: small;
 }
 
@@ -112,8 +112,8 @@ body {
   }
 
   .jumbotron {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
   }
 
   .registration-wrapper {
@@ -126,5 +126,12 @@ body {
 
   .footer {
     display: flex;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #mainNav {
+    display: flex;
+    justify-content: space-between;
   }
 }

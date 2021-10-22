@@ -9,24 +9,24 @@ html(lang="en")
     title Chronicle
   body
     header.header
-      nav.navbar.navbar-expand-md.navbar-light
-        .container
-          a.navbar-brand(href="/")
-            img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle logo' style='height:50px;')
-          button.navbar-toggler(data-toggle="collapse" data-target="#mainNav")
-            span.navbar-toggler-icon
-          .collapse.navbar-collapse(id="mainNav")
-            if user
-              a.nav-link.btn(href="/books" type="submit") Books
-              a.nav-link.btn(href="/movies") Movies
-              a.nav-link.btn(href="/users/" + user.id + "/books") My Books
-              a.nav-link.btn(href="/users/" + user.id + "/movies") My Movies
-              a.nav-link.btn(href="/users/" + user.id) Profile
-              a.nav-link.btn(href="/session/logout") Log Out
-
-            if !user
-                a.nav-link.btn(href="/users/new") Sign Up
-                a.nav-link.btn(href="/session/new") Log In
+      nav.navbar.navbar-expand-lg.navbar-light
+        a.navbar-brand.d-flex.me-auto(href="/")
+          img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle logo' style='height:50px;')
+        button.navbar-toggler(data-toggle="collapse" data-target="#mainNav")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse(id="mainNav")
+          if user
+            .nav.navbar-nav
+              a.nav-link.btn.px-3(href="/books" type="submit") Books
+              a.nav-link.btn.px-3(href="/movies") Movies
+            .nav.navbar-nav.ms-auto.justify-content-end
+              a.nav-link.btn.px-3(href="/users/" + user.id + "/books") My Books
+              a.nav-link.btn.px-3(href="/users/" + user.id + "/movies") My Movies
+              a.nav-link.btn.px-3(href="/users/" + user.id) Profile
+              a.nav-link.btn.px-3(href="/session/logout") Log Out
+          if !user
+            a.nav-link.btn(href="/users/new") Sign Up
+            a.nav-link.btn(href="/session/new") Log In
       
     main.container-fluid(role="main")
       block content
