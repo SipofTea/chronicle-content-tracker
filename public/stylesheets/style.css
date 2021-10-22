@@ -106,6 +106,12 @@ body {
     padding-right: 10vw;
   }
 
+  .jumbotron {
+    padding: 0px;
+    margin-left: 10vh;
+    margin-right: 10vh;
+  }
+
   .registration-wrapper {
     padding: 5vw;
     margin: 20vw;

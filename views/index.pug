@@ -2,10 +2,10 @@
 extends layout
 
 block content
-  if (message.length > 0)
+  if (message)
     #alert
       p= message
 
   div.jumbotron
-    img(src='/images/bookhero.png' alt='Banner with logo and books' style='max-width: 100%;')
+    img(src='/images/bookhero.png' alt='Banner with logo and books')
 
