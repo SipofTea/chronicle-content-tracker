@@ -9,49 +9,32 @@ html(lang="en")
     title Chronicle
   body
     header.header
-      nav.navbar
-        a.navbar-brand(href="/")
-          img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle' style='height:50px;')
-        if user
-          ul.navbar-nav.mr-auto.flex-row.fullnav
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/books") Books
-            li.navbar-item.d-flex.justify-content-center.align-items-center
+      nav.navbar.navbar-expand-md.navbar-light
+        .container
+          a.navbar-brand(href="/")
+            img(src='/images/Chronicle_navbar_logo.png' alt='Chronicle logo' style='height:50px;')
+          button.navbar-toggler(data-toggle="collapse" data-target="#mainNav")
+            span.navbar-toggler-icon
+          .collapse.navbar-collapse(id="mainNav")
+            if user
+              a.nav-link.btn(href="/books" type="submit") Books
               a.nav-link.btn(href="/movies") Movies
-
-          ul.navbar-nav.flex-row.fullnav
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/users/" + user.id + "/movies") My Movies
-            li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/users/" + user.id + "/books") My Books
-            li.navbar-item.d-flex.justify-content-center.align-items-center
+              a.nav-link.btn(href="/users/" + user.id + "/movies") My Movies
               a.nav-link.btn(href="/users/" + user.id) Profile
-            li.navbar-item.d-flex.justify-content-center.align-items-center
               a.nav-link.btn(href="/session/logout") Log Out
- 
-          button.btn.navbar-toggler.dropnav(type="button", data-toggle="dropdown") Menu
-            .dropdown-menu.dropdown-menu-right
-                a.dropdown-item(href="/books" type="submit") Books
-                a.dropdown-item(href="/movies") Movies
-                a.dropdown-item(href="/users/" + user.id + "/books") My Books
-                a.dropdown-item(href="/users/" + user.id + "/movies") My Movies
-                a.dropdown-item(href="/users/" + user.id) Profile
-                a.dropdown-item(href="/session/logout") Log Out
-                
-        if !user
-          ul.navbar-nav.flex-row
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/users/new") Sign Up
-            li.navbar-item.d-flex.justify-content-center.align-items-center
-              a.nav-link.btn(href="/session/new") Log In
 
+            if !user
+                a.nav-link.btn(href="/users/new") Sign Up
+                a.nav-link.btn(href="/session/new") Log In
+      
     main.container-fluid(role="main")
       block content
     
     footer.footer
       .container.d-flex.justify-content-center.align-items-center
           .footer-element.d-flex.justify-content-center.align-items-center
-            a(href="") Contact Us
+            a(href="#") Contact Us
           .footer-element.d-flex.justify-content-center.align-items-center
             p Created by Noodle Gang anno 2021
           .footer-element.d-flex.justify-content-center.align-items-center
