@@ -51,6 +51,8 @@ body {
 .registration-wrapper {
   padding: 5vw;
   margin: 1vh;
+  max-width: 400px;
+  max-height: 400px;
   border: 2px solid #AC8352;
   border-radius: 8px;
   background-color: #272A3A;
@@ -61,7 +63,7 @@ body {
 }
 
 .registration-wrapper .form-control {
-  margin: 10px;
+  margin-top: 10px;
 }
 
 .registration-wrapper p {
@@ -118,7 +120,7 @@ body {
 
   .registration-wrapper {
     padding: 5vw;
-    margin: 20vw;
+    margin: 10vh;
     border: 2px solid #AC8352;
     border-radius: 8px;
     background-color: #272A3A;
