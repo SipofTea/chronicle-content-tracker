@@ -2,6 +2,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const searchButton = document.getElementById('book-search-submit');
   const list = document.getElementById('book-list-results');
 
+  //book search
+  searchButton.addEventListener( 'click', (event) => {
+    event.preventDefault();
+    list.innerHTML = "";
+    const query = document.getElementById('book-search-query').value;
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
+    .then(response => response.json())
+    .then((data) => {return data.items})
+    .then((bookResults) => {
+      for (i = 0; i < bookResults.length; i++ ) {
+        createBookCard(bookResults[i]);
+      }
+    });
+  });
+
+  //display search results
+
   let createBookCardFormElement = ((key, value) => {
       const element = document.createElement("input")
       element.setAttribute("type", "hidden")
@@ -32,7 +49,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const titleTag = document.createElement("h3")
     titleTag.innerHTML = bookResult.volumeInfo.title;
 
-    //set autor
+    //set author
     const authorTag = document.createElement("h4")
     authorTag.innerHTML = bookResult.volumeInfo.authors[0]
 
@@ -67,28 +84,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     addButton.innerHTML = ("Add book")
     bookForm.appendChild(addButton)
 
+    //fill in book card
     bookCard.appendChild(imgWrapper);
     cardBody.appendChild(titleTag);
     cardBody.appendChild(authorTag);
     cardBody.appendChild(descriptionTag);
     cardBody.appendChild(bookForm);
     bookCard.appendChild(cardBody);
+
+    //add book card to list
     list.appendChild(bookCard);
   })
-
-  searchButton.addEventListener( 'click', (event) => {
-    event.preventDefault();
-    list.innerHTML = "";
-    const query = document.getElementById('book-search-query').value;
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCKQ0s_7lFUeJA3GSYhcsXP8tPAX9O36xQ`)
-    .then(response => response.json())
-    .then((data) => {return data.items})
-    .then((bookResults) => {
-      for (i = 0; i < bookResults.length; i++ ) {
-        createBookCard(bookResults[i]);
-      }
-    });
-  });
-
-
 });

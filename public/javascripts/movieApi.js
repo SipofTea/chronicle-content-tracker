@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const titleTag = document.createElement("h3")
     titleTag.innerHTML = movieResult.title;
 
-    //set autor
+    //set author
     const releaseTag = document.createElement("h5")
     releaseTag.innerHTML = `First released: ${movieResult.release_date}`
 
